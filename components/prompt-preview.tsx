@@ -123,35 +123,35 @@ export function PromptPreview({ formData }: PromptPreviewProps) {
             transition={{ duration: 0.3 }}
           >
             <Card className="border-0 bg-gradient-to-br from-slate-800 to-slate-900 shadow-lg">
-              <CardHeader>
+              <CardHeader className="pb-3">
                 <div className="flex items-center justify-between">
-                  <CardTitle className="text-slate-100 text-lg">
+                  <CardTitle className="text-slate-100 text-lg font-semibold">
                     {formData.productName || "Your Product"}
                   </CardTitle>
                   <div className="flex gap-2">
-                    <Badge className="bg-gradient-to-r from-blue-600 to-blue-800 text-slate-100">
+                    <Badge className="bg-gradient-to-r from-blue-600 to-blue-800 text-slate-100 shadow-sm">
                       {formData.visualStyle}
                     </Badge>
-                    <Badge className="bg-gradient-to-r from-purple-600 to-purple-800 text-slate-100">
+                    <Badge className="bg-gradient-to-r from-purple-600 to-purple-800 text-slate-100 shadow-sm">
                       {formData.musicMood}
                     </Badge>
                   </div>
                 </div>
               </CardHeader>
               <CardContent className="space-y-4">
-                <div className="bg-slate-700 rounded-lg p-4 border border-slate-600 shadow-inner">
-                  <pre className="whitespace-pre-wrap text-slate-100 text-sm leading-relaxed font-mono">
+                <div className="bg-slate-700/90 rounded-lg p-4 border border-slate-600 shadow-inner ring-1 ring-inset ring-slate-500/10">
+                  <pre className="whitespace-pre-wrap text-slate-100 text-sm leading-relaxed font-mono selection:bg-blue-500/20">
                     {generatedPrompt}
                   </pre>
                 </div>
 
-                <Separator className="bg-slate-600" />
+                <Separator className="bg-slate-600/80" />
 
                 {/* Action Buttons */}
                 <div className="flex flex-wrap gap-3">
                   <Button
                     onClick={() => handleCopy(generatedPrompt, "Prompt")}
-                    className="bg-blue-600 hover:bg-blue-700 text-slate-100 flex items-center gap-2"
+                    className="bg-blue-600 hover:bg-blue-700 text-slate-100 flex items-center gap-2 shadow-sm"
                   >
                     {copiedStates["Prompt"] ? (
                       <CheckCircle className="h-4 w-4" />
@@ -164,7 +164,7 @@ export function PromptPreview({ formData }: PromptPreviewProps) {
                   <Button
                     onClick={handleDownload}
                     variant="outline"
-                    className="bg-slate-700 border-slate-600 text-slate-200 hover:bg-slate-600 flex items-center gap-2"
+                    className="bg-slate-700/90 border-slate-600 text-slate-200 hover:bg-slate-600 flex items-center gap-2 shadow-sm"
                   >
                     <Download className="h-4 w-4" />
                     Download
@@ -173,7 +173,7 @@ export function PromptPreview({ formData }: PromptPreviewProps) {
                   <Button
                     onClick={handleShare}
                     variant="outline"
-                    className="bg-slate-700 border-slate-600 text-slate-200 hover:bg-slate-600 flex items-center gap-2"
+                    className="bg-slate-700/90 border-slate-600 text-slate-200 hover:bg-slate-600 flex items-center gap-2 shadow-sm"
                   >
                     <Share2 className="h-4 w-4" />
                     Share
@@ -182,7 +182,7 @@ export function PromptPreview({ formData }: PromptPreviewProps) {
                   <Button
                     onClick={handleSave}
                     variant="outline"
-                    className="bg-slate-700 border-slate-600 text-slate-200 hover:bg-slate-600 flex items-center gap-2"
+                    className="bg-slate-700/90 border-slate-600 text-slate-200 hover:bg-slate-600 flex items-center gap-2 shadow-sm"
                   >
                     <Save className="h-4 w-4" />
                     Save
@@ -220,12 +220,12 @@ export function PromptPreview({ formData }: PromptPreviewProps) {
             exit={{ opacity: 0 }}
             className="text-center py-12"
           >
-            <Card className="border-0 bg-gradient-to-br from-slate-900/30 to-slate-800/30 backdrop-blur-sm">
+            <Card className="border-0 bg-white/5 backdrop-blur-sm shadow-lg border border-white/10">
               <CardContent className="py-12">
-                <div className="text-slate-400 space-y-2">
-                  <Play className="h-12 w-12 mx-auto opacity-50" />
-                  <h3 className="text-lg font-medium text-slate-300">Ready to Create?</h3>
-                  <p>Fill in the product details to generate your cinematic AI video prompt</p>
+                <div className="text-white/70 space-y-3">
+                  <Play className="h-12 w-12 mx-auto opacity-70" />
+                  <h3 className="text-lg font-medium text-white">Ready to Create?</h3>
+                  <p className="text-white/80">Fill in the product details to generate your cinematic AI video prompt</p>
                 </div>
               </CardContent>
             </Card>
